@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+  --color-night-bg: #07060F;
+  --color-night-card: rgba(255, 255, 255, 0.04);
+  --color-night-border: rgba(124, 58, 237, 0.25);
+  --color-night-muted: #9D94C4;
+  
+  --color-purple-primary: #7C3AED;
+  --color-purple-light: #A78BFA;
+  --color-purple-dim: #4C1D95;
+  
+  --color-blue-primary: #2563EB;
+  --color-blue-light: #60A5FA;
+  
+  --color-accent-orange: #F59E0B;
+  --color-accent-red: #EF4444;
+  --color-accent-green: #10B981;
+}
+
+@layer base {
+  body {
+    @apply bg-night-bg text-white font-sans antialiased selection:bg-purple-primary/30;
+  }
+}
+
+.glow-purple {
+  box-shadow: 0 0 60px rgba(124, 58, 237, 0.35);
+}
+
+.text-gradient-purple-blue {
+  @apply bg-linear-to-br from-purple-light to-blue-light bg-clip-text text-transparent;
+}
+
+.bg-cta-hot {
+  @apply bg-linear-to-br from-accent-orange to-accent-red;
+}
+
+.bg-cta-cool {
+  @apply bg-linear-to-br from-purple-primary to-blue-primary;
+}
+
+.slant-shine {
+  @apply absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out;
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
